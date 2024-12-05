@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "42 Learning",
+    "description": "Better 42 Learning experience",
+    "version": "0.1",
+    "action": {
+        "default_popup": "hello.html",
+        "default_icon": "hello_extensions.jpeg"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "js": ["scripts/content.js"],
+            "matches": [
+                "https://projects.intra.42.fr/42cursus-*/*",
+                "https://projects.intra.42.fr/projects/42cursus-*"
+            ]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://projects.intra.42.fr/*"
+    ]
+}

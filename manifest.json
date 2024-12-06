@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "42 Learning",
-    "description": "Better 42 Learning experience",
-    "version": "0.1",
+    "name": "42Project Compass",
+    "description": "Navigate through 42 projects with clarity and confidence.",
+    "version": "0.0.1",
     "action": {
         "default_popup": "hello.html",
         "default_icon": "hello_extensions.jpeg"

@@ -8,11 +8,28 @@ window.addEventListener('load', function() {
         if (header.textContent.trim() === "Description") {
             const projectDescItem = header.closest('.project-desc-item');
             if (projectDescItem) {
-                const button = document.createElement("button");
-                button.innerText = "Learning Objectives";
-                button.classList.add("btn", "btn-primary");
-                projectDescItem.appendChild(button);
-                console.log("Button inserted");
+                const resourceButton = document.createElement("button");
+                resourceButton.innerText = "Resources";
+                resourceButton.classList.add("btn", "btn-primary");
+                resourceButton.title = "Click to see the resources of this project";
+                projectDescItem.appendChild(resourceButton);
+                console.log("resourceButton inserted");
+
+                const learningButton = document.createElement("button");
+                learningButton.innerText = "Learning Objectives";
+                learningButton.classList.add("btn", "btn-primary");
+                learningButton.style.marginLeft = "2px";
+                learningButton.style.marginRight = "2px";
+                learningButton.title = "Click to see the learning objectives of this project";
+                projectDescItem.appendChild(learningButton);
+                console.log("learningButton inserted");
+
+                const howButton = document.createElement("button");
+                howButton.innerText = "How to learn";
+                howButton.classList.add("btn", "btn-primary");
+                howButton.title = "Click to learn how to learn";
+                projectDescItem.appendChild(howButton);
+                console.log("howButton inserted");
             }
         }
     });

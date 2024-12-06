@@ -1,5 +1,4 @@
-# **42Project Compass**  
-
+# **42Project Compass (Under active developpement)**  
 Transform the way you navigate and approach your projects on the 42 network intranet with our innovative browser extension. This powerful tool adds two meticulously crafted sections—*Learning Objectives* and *Resources*—to every project page.  
 
 - **Learning Objectives:** Clearly defined goals that outline the core concepts and skills each project aims to teach. Gain a deeper understanding of the purpose behind every task, helping you focus on what truly matters.  

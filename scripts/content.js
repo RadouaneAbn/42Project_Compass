@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
 
     if (currentURL.startsWith("https://projects.intra.42.fr/projects/")) {
         const projectName = currentURL.split("/").pop();
-        console.log("Project Title:", projectTitle);
+        console.log("Project Title:", projectName);
         const headers = document.querySelectorAll("h4");
         console.log("Found headers:", headers);
         headers.forEach(header => {

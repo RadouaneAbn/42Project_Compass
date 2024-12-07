@@ -14,8 +14,8 @@
         {
             "js": ["scripts/content.js"],
             "matches": [
-                "https://projects.intra.42.fr/42cursus-*/*",
-                "https://projects.intra.42.fr/projects/42cursus-*"
+                "https://projects.intra.42.fr/*/*",
+                "https://projects.intra.42.fr/projects/*"
             ]
         }
     ],

@@ -26,6 +26,8 @@ window.addEventListener('load', function() {
                     resourceButton.innerText = "Resources";
                     resourceButton.classList.add("btn", "btn-primary");
                     resourceButton.title = "Click to see the resources of this project";
+                    const link1 = `https://raw.githubusercontent.com/Matsadura/42Project_Compass/refs/heads/main/resources/${projectName}.json`;
+                    resourceButton.onclick = () => fetchResourcesAndShowPanel(link1);
                     projectDescItem.appendChild(resourceButton);
                     console.log("resourceButton inserted");
 
@@ -60,6 +62,8 @@ window.addEventListener('load', function() {
                 resourceButton.innerText = "Resources";
                 resourceButton.classList.add("btn", "btn-primary");
                 resourceButton.title = "Click to see the resources of this project";
+                const link1 = `https://raw.githubusercontent.com/Matsadura/42Project_Compass/refs/heads/main/resources/${projectName}.json`;
+                resourceButton.onclick = () => fetchResourcesAndShowPanel(link1);
                 projectSummary.appendChild(resourceButton);
                 console.log("resourceButton inserted");
 
@@ -69,8 +73,8 @@ window.addEventListener('load', function() {
                 learningButton.style.marginTop = "2px";
                 learningButton.style.marginBottom = "2px";
                 learningButton.title = "Click to see the learning objectives of this project";
-                const link = `https://raw.githubusercontent.com/Matsadura/42Project_Compass/refs/heads/main/learning_objectives/${projectName}.json`;
-                learningButton.onclick = () => fetchDataAndShowPanel(link);
+                const link2 = `https://raw.githubusercontent.com/Matsadura/42Project_Compass/refs/heads/main/learning_objectives/${projectName}.json`;
+                learningButton.onclick = () => fetchDataAndShowPanel(link2);
                 projectSummary.appendChild(learningButton);
                 console.log("learningButton inserted");
 
@@ -151,4 +155,61 @@ function formatJSON(data) {
         return html;
     }
     return createList(data);
+}
+
+// New function for fetching and showing resources
+function fetchResourcesAndShowPanel(url) {
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            showResourcesPanel(data);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+function showResourcesPanel(data) {
+    // Create the dimmed background
+    const dimmedBackground = document.createElement('div');
+    dimmedBackground.style.position = 'fixed';
+    dimmedBackground.style.top = '0';
+    dimmedBackground.style.left = '0';
+    dimmedBackground.style.width = '100%';
+    dimmedBackground.style.height = '100%';
+    dimmedBackground.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    dimmedBackground.style.zIndex = '9998';
+    dimmedBackground.onclick = () => {
+        document.body.removeChild(dimmedBackground);
+        document.body.removeChild(panel);
+    };
+    // Create the panel
+    const panel = document.createElement('div');
+    panel.style.position = 'fixed';
+    panel.style.top = '50%';
+    panel.style.left = '50%';
+    panel.style.transform = 'translate(-50%, -50%)';
+    panel.style.width = '50%';
+    panel.style.maxHeight = '80%';
+    panel.style.overflowY = 'auto';
+    panel.style.backgroundColor = 'white';
+    panel.style.padding = '20px';
+    panel.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+    panel.style.zIndex = '9999';
+    // Add content to the panel
+    const contentElement = document.createElement('div');
+    contentElement.innerHTML = formatResourcesJSON(data);
+    panel.appendChild(contentElement);
+    // Append the dimmed background and panel to the body
+    document.body.appendChild(dimmedBackground);
+    document.body.appendChild(panel);
+}
+
+function formatResourcesJSON(data) {
+    let html = '<ul>';
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            html += `<li><a href="${data[key]}" target="_blank">${key}</a></li>`;
+        }
+    }
+    html += '</ul>';
+    return html;
 }

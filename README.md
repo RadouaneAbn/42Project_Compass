@@ -22,3 +22,23 @@ Transform the way you navigate and approach your projects on the 42 network intr
 - **Resources:** A curated collection of study materials, tutorials, documentation, and relevant links tailored to each project. These resources provide the guidance you need to tackle challenges confidently and effectively.  
 
 Whether you're a beginner striving to build your foundation or an advanced learner aiming to refine your expertise, this extension ensures you have everything you need to succeed at your fingertips. Simplify your workflow, enhance your learning, and make every project count with this indispensable tool for 42 students.
+
+## Installation
+
+1. **Download the Extension**:  
+   Clone the repository
+
+2. **Open Chrome Extensions Page**:  
+   - Open Chrome and go to `chrome://extensions/` or click the menu (three dots) → "More Tools" → "Extensions."
+
+3. **Enable Developer Mode**:  
+   - Toggle the **Developer mode** switch in the top-right corner of the Extensions page.
+
+4. **Load the Extension**:  
+   - Click the **"Load unpacked"** button.
+   - Select the folder containing the extension files.
+
+5. **Verify Installation**:  
+   - The extension should now appear in your list of extensions and be active.  
+
+You're all set! 🎉

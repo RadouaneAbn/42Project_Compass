@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Aktiv Grotesk";
+    src: url(./AktivGrotesk-Regular.ttf);
+  }
+  
+  .popup {
+    height: 400px;
+    width: 320px;
+    font-family: "Aktiv Grotesk", sans-serif;
+  }
+  
+  .container {
+    padding: 0 !important;
+  }
+  
+  .card-body {
+    padding: 0 !important;
+    transition: background-color 700ms ease-in, color 300ms ease-in;
+  }
+  
+  .card-head, .card-foot {
+    padding: 10px 10px;
+  }
+  
+  .card-content {
+    padding: 10px 0;
+    transition: background-color 500ms ease-in, color 500ms ease-in;
+  }
+  
+  .switch-icon {
+    cursor: pointer;
+  }
+  
+  
+  .card-foot>p:last-child {
+    margin-bottom: 0 !important;
+  }
+  
+  .contribute:hover {
+    text-decoration: underline !important;
+  }
+  
+  .contribute-link-light-mode {
+    color: #000000;
+    font-size: 12px;
+  }
+  
+  .copy-text {
+    font-size: 12px;
+    margin: 0;
+  }
+  
+  .small {
+    font-style: italic;
+    font-size: 6px;
+  }

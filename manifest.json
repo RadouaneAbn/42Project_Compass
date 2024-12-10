@@ -2,26 +2,45 @@
     "manifest_version": 3,
     "name": "42Project Compass",
     "description": "Navigate through 42 projects with clarity and confidence.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "action": {
-        "default_popup": "hello.html",
-        "default_icon": "hello_extensions.jpeg"
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "32": "icons/icon32.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
     },
-    "background": {
-        "service_worker": "background.js"
-    },
+    "icons": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      },
     "content_scripts": [
         {
             "js": ["scripts/content.js"],
             "matches": [
                 "https://projects.intra.42.fr/*/*",
                 "https://projects.intra.42.fr/projects/*"
-            ]
+            ],
+            "css": ["css/styles.css"],
+            "run_at": "document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "html/panel.html"
+            ],
+            "matches": ["https://projects.intra.42.fr/*"]
         }
     ],
     "permissions": [
         "tabs",
-        "scripting"
+        "scripting",
+        "storage"
     ],
     "host_permissions": [
         "https://projects.intra.42.fr/*"

@@ -1,7 +1,10 @@
 [
-	"How a virtual machine works.",
+	"what is virtualization and what is a virtual machine",
+	"the basics of linux command line",
 	"The basic differences between Rocky and Debian.",
 	"The purpose of virtual machines.",
-	"The purpose of virtual machines",
-	"How to create and setup a User"
+	"How to create and setup a server.",
+	"what is ssh and how it works.",
+	"what is ufw and how it works",
+	"what is apparmor, and what's the difference between apt and apptitude"
 ]

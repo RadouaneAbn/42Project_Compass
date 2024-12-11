@@ -41,10 +41,6 @@ a.btn__primary_url:hover {
     text-decoration: underline;
 }
 
-.btn {
-    margin: 1px;
-}
-
 div#panel ul {
     margin: 0;
 }
@@ -61,8 +57,7 @@ div#panel li {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 6px;
     border: 0;
 }
 

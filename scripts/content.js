@@ -52,7 +52,7 @@ function handleMyProjectsPage(currentURL, loginValue) {
     if (projectSummary) {
         addButton(projectSummary, "Resources", `https://raw.githubusercontent.com/Matsadura/42Project_Compass/refs/heads/main/resources/${projectName}.json`, fetchResourcesAndShowPanel);
         addButton(projectSummary, "Learning Objectives", `https://raw.githubusercontent.com/Matsadura/42Project_Compass/refs/heads/main/learning_objectives/${projectName}.json`, fetchDataAndShowPanel);
-        addButton(projectSummary, "How to learn", "#", () => alert("Coming soon!"));
+        addButton(projectSummary, "How to learn (Coming soon)", "#", () => alert("Coming soon!"));
     }
 }
 
@@ -66,7 +66,7 @@ function handleMyProjectsPage(currentURL, loginValue) {
 function addButton(parent, text, url, onClick) {
     const button = document.createElement("button");
     button.innerText = text;
-    button.classList.add("btn", "btn-primary");
+    button.classList.add("btn__primary");
     button.title = `Click to see the ${text.toLowerCase()} of this project`;
     button.onclick = () => onClick(url);
     parent.appendChild(button);
@@ -199,7 +199,7 @@ function formatResourcesJSON(data) {
     let html = '<ul>';
     for (const key in data) {
         if (data.hasOwnProperty(key)) {
-            html += `<li><a href="${data[key]}" target="_blank">${key}</a></li>`;
+            html += `<li><a href="${data[key]}" target="_blank" class="btn__primary_url">${key}</a></li>`;
         }
     }
     html += '</ul>';

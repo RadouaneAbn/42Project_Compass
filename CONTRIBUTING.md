@@ -54,6 +54,7 @@ Thank you for considering contributing to this project! Your contributions are h
      }
      ```
 
+**IMPORTANT**: Ensure the contents of the JSON file are validated using [JSON Validator](https://jsonlint.com/)
 ---
 
 ### 3a. If Your Contribution Is Code-Related:

@@ -24,6 +24,30 @@
     border-radius: 5px;
 }
 
+.btn__holder {
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.btn__primary {
+    flex: 1 1 30%;  
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    background-color: #00babc;
+    color: white;
+    font-family: "futura-pt", "Helvetica", "Sans serif";
+    font-weight: 500;
+    font-size: 15px;
+    font-style: normal;
+    margin-top: 6px;
+    border: 0;
+}
+
+.btn__primary:hover {
+    background-color: #009699;
+}
+
 a.btn__primary_url {
     text-decoration: underline;
     color: #00849b;
@@ -33,7 +57,7 @@ a.btn__primary_url {
     margin: 0;
     font: inherit;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 a.btn__primary_url:hover {
@@ -47,20 +71,4 @@ div#panel ul {
 
 div#panel li {
     margin-bottom: 2px;
-}
-
-.btn__primary {
-    width: 100%;
-    height: 40px;
-    background-color: #00babc;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin-top: 6px;
-    border: 0;
-}
-
-.btn__primary:hover {
-    background-color: #009699;
 }

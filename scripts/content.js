@@ -31,9 +31,12 @@ function handleProjectPage(currentURL) {
         if (header.textContent.trim() === "Description") {
             const projectDescItem = header.closest('.project-desc-item');
             if (projectDescItem) {
-                addButton(projectDescItem, "Resources", `https://raw.githubusercontent.com/Matsadura/42Project_Compass/refs/heads/main/resources/${projectName}.json`, fetchResourcesAndShowPanel);
-                addButton(projectDescItem, "Learning Objectives", `https://raw.githubusercontent.com/Matsadura/42Project_Compass/refs/heads/main/learning_objectives/${projectName}.json`, fetchDataAndShowPanel);
-                addButton(projectDescItem, "How to learn", "#", () => alert("Coming soon!"));
+                const buttonsHolder = document.createElement("div");
+                buttonsHolder.classList.add("btn__holder");
+                addButton(buttonsHolder, "Resources", `https://raw.githubusercontent.com/Matsadura/42Project_Compass/refs/heads/main/resources/${projectName}.json`, fetchResourcesAndShowPanel);
+                addButton(buttonsHolder, "Learning Objectives", `https://raw.githubusercontent.com/Matsadura/42Project_Compass/refs/heads/main/learning_objectives/${projectName}.json`, fetchDataAndShowPanel);
+                addButton(buttonsHolder, "How to learn (Soon)", "#", () => alert("Coming soon!"));
+                projectDescItem.appendChild(buttonsHolder);
             }
         }
     });
@@ -52,7 +55,7 @@ function handleMyProjectsPage(currentURL, loginValue) {
     if (projectSummary) {
         addButton(projectSummary, "Resources", `https://raw.githubusercontent.com/Matsadura/42Project_Compass/refs/heads/main/resources/${projectName}.json`, fetchResourcesAndShowPanel);
         addButton(projectSummary, "Learning Objectives", `https://raw.githubusercontent.com/Matsadura/42Project_Compass/refs/heads/main/learning_objectives/${projectName}.json`, fetchDataAndShowPanel);
-        addButton(projectSummary, "How to learn (Coming soon)", "#", () => alert("Coming soon!"));
+        addButton(projectSummary, "How to learn (Soon)", "#", () => alert("Coming soon!"));
     }
 }
 
